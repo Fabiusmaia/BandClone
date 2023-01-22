@@ -1,0 +1,94 @@
+.panelContainer{
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.inputContainer{
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 1.2em;
+    border-radius: 5px;
+}
+.inputField{
+    margin-top: 20px;
+    display:inline-block;
+    width: 100%;
+}
+.ddclick{
+    cursor: pointer;
+}
+.dropdown{
+    display:none;
+}
+.dropdown_toggle{
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+body{
+overflow:auto
+}
+.addTrack{
+    cursor: pointer
+}
+label{
+    font-weight: bold;
+}
+.loading{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
+.successPopUp{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #4BB543;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 80%;
+    animation: 3s ease slidein;
+    flex-wrap: nowrap;
+    color: #4BB543;
+}
+.errorPopUp{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #fc304f;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 80%;
+    animation: 3s ease slidein;
+    flex-wrap: nowrap;
+    color: #fc304f;
+}
+
+@keyframes slidein{
+    0%{
+        margin-left: 100%;
+    }
+    50%{
+        margin-left: 80%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+    
+}
+@keyframes dropdown{
+    
+    
+}
+input[type="submit"]{
+    height: 40px;
+    width: 200px;
+    background-color: #323232;
+    color: white;
+    cursor: pointer;
+}
