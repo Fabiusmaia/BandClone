@@ -1,0 +1,58 @@
+.form{
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    font-size: 1.2em;
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 3px;
+}
+a{
+    text-decoration: none;
+}
+span{
+    background-color: #323232;
+    color: #dddfe2;
+    padding: 4px;
+}
+.form input{
+    width: 90%;
+    height: 50px;
+    border: 1px solid #dddfe2;
+    border-radius:3px;
+    text-align: center;
+}
+.form button{
+    width: 90%;
+    height: 50px;
+    background-color: #323232;
+    color: #dddfe2;
+    cursor: pointer;
+}
+.inputDiv{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.background{
+    padding-top: 20px;
+    background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1504/Vinyl_Records_Theme_HD_Desktop_Wallpaper_02_1366x768.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+body{
+    overflow: hidden;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}

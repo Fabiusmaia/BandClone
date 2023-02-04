@@ -1,0 +1,43 @@
+
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.wrapper{
+    background-color: #f5f5f5;
+    margin:0 auto;
+    max-width: 60%;
+    width: fit-content;
+    height: fit-content;
+   
+}
+
+.albums{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+
+}
+.username{
+    margin-right: 2em;
+    height:fit-content;
+}
+.albumCover{
+    height: 180px;
+    width: 160px;
+    object-fit: cover;
+}
+.album{
+    padding: 1em;
+}
