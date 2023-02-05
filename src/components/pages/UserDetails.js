@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../styling/userDetails.module.css";
 
 function UserDetails() {
@@ -25,14 +26,20 @@ function UserDetails() {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.albums}>
-          {albums.map((a) => {
-            return (
-              <div className={styles.album}>
-                <img src={a.cover} className={styles.albumCover} />
-                <h3>{a.name}</h3>
-              </div>
-            );
-          })}
+          {albums && (
+            <>
+              {albums.map((a) => {
+                return (
+                  <div className={styles.album}>
+                    <Link to={`/album/${a._id}/${data.name}`}>
+                      <img src={a.cover} className={styles.albumCover} />
+                      <h3>{a.name}</h3>
+                    </Link>{" "}
+                  </div>
+                );
+              })}
+            </>
+          )}
         </div>
         <div className={styles.username}>
           <h1>{data.name}</h1>

@@ -43,7 +43,11 @@ const createUser = (req, res) => {
 const getSingleUser = async (req, res) => {
   const { id } = req.params;
   const user = await Users.findById(id);
-  res.json(user);
+  const albums = await Albums.find({ userId: id });
+  res.json({
+    user: user,
+    albums: albums,
+  });
 };
 const deleteUser = async (req, res) => {
   const { id } = req.params;
@@ -104,6 +108,18 @@ const uploadAlbum = (req, res) => {
   });
 };
 
+const getSingleAlbum = (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  Albums.findById(id, (err, album) => {
+    if (!err) {
+      res.status(200).json({
+        album: album,
+      });
+    }
+  });
+};
+
 module.exports = {
   createUser,
   getSingleUser,
@@ -112,4 +128,5 @@ module.exports = {
   userLogin,
   verifyToken,
   uploadAlbum,
+  getSingleAlbum,
 };
