@@ -42,18 +42,12 @@ const createUser = (req, res) => {
 
 const getSingleUser = async (req, res) => {
   const { id } = req.params;
-  const { pages, albumsPerPage } = req.query;
   const user = await Users.findById(id);
-  const albumsCount = await Albums.find({ userId: id }).count();
-  const albums = await Albums.find({ userId: id })
-    .skip(pages * albumsPerPage)
-    .limit(albumsPerPage);
+  const albums = await Albums.find({ userId: id });
   res.json({
     user: user,
     albums: albums,
-    albumsCount: albumsCount,
   });
-  console.log(albumsPerPage, pages);
 };
 const deleteUser = async (req, res) => {
   const { id } = req.params;
@@ -99,20 +93,6 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-const protectRequest = (req, res, next) => {
-  const token = req.headers["x-access-token"];
-  jwt.verify(token, process.env.SECRET, (err, decoded) => {
-    Albums.findOne({ userId: decoded.userId }).then((albums) => {
-      if ("/".concat(albums.userId) === req.url) {
-        next();
-      } else {
-        return res.status(401).json({ message: "401 unauthorized. " });
-      }
-    });
-  });
-  next();
-};
-
 const uploadAlbum = (req, res) => {
   const { userId, name, cover, tracks } = req.body;
   let newAlbum = new Albums();
@@ -130,6 +110,7 @@ const uploadAlbum = (req, res) => {
 
 const getSingleAlbum = (req, res) => {
   const { id } = req.params;
+  console.log(id);
   Albums.findById(id, (err, album) => {
     if (!err) {
       res.status(200).json({
@@ -148,5 +129,4 @@ module.exports = {
   verifyToken,
   uploadAlbum,
   getSingleAlbum,
-  protectRequest,
 };

@@ -11,6 +11,7 @@ import {
   FaFileUpload,
   FaMinus,
 } from "react-icons/fa";
+
 import styles from "../styling/panel.module.css";
 function UserPanel() {
   const [errorPopUp, setErrorPopUp] = useState(false);
@@ -229,30 +230,28 @@ function UserPanel() {
                   className={toggle ? styles.dropdown_toggle : styles.dropdown}
                   onSubmit={(e) => handleSubmit(e)}
                 >
-                  <div className={styles.albumInput}>
-                    <div className={styles.inputField}>
-                      <label htmlFor="name">Album name</label>
-                      <br />
-                      <input
-                        type="text"
-                        required
-                        alue={albumName}
-                        onChange={(e) => setAlbumName(e.target.value)}
-                      ></input>
-                    </div>
-                    <div className={styles.inputField}>
-                      <label htmlFor="cover">Album image cover</label>
-                      <br></br>
-                      <input
-                        type="file"
-                        required
-                        className={styles.fileInput}
-                        onChange={(e) => {
-                          setAlbumImage(e.target.files[0]);
-                        }}
-                      ></input>
-                      <br></br>
-                    </div>
+                  <div className={styles.inputField}>
+                    <label htmlFor="name">Album name</label>
+                    <br />
+                    <input
+                      type="text"
+                      required
+                      alue={albumName}
+                      onChange={(e) => setAlbumName(e.target.value)}
+                    ></input>
+                  </div>
+                  <div className={styles.inputField}>
+                    <label htmlFor="cover">Album image cover</label>
+                    <br></br>
+                    <input
+                      type="file"
+                      required
+                      className={styles.fileInput}
+                      onChange={(e) => {
+                        setAlbumImage(e.target.files[0]);
+                      }}
+                    ></input>
+                    <br></br>
                     {inputs.map((t, i) => {
                       return (
                         <div className={styles.inputContainer}>
