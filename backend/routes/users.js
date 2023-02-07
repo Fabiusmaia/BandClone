@@ -8,6 +8,7 @@ const {
   deleteUser,
   userLogin,
   verifyToken,
+  protectRequest,
 } = require("../controllers/userControllers");
 module.exports = router;
 
