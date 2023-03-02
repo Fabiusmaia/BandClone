@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const { apiURL } = useContext(Context);
+  const [apiURL] = useContext(Context);
 
   useEffect(() => {
     axios

@@ -25,7 +25,7 @@ function UserPanel() {
   const [sendingTrackData, setSendingTrackData] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [toggleIcon, setToggleIcon] = useState(true);
-  const { authenticated, apiURL } = useContext(Context); //
+  const [authenticated, apiURL] = useContext(Context); //
   const [data, setData] = useState({});
   const [albumName, setAlbumName] = useState("");
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ function UserPanel() {
 
   useEffect(() => {
     axios
-      .get(`${apiURL}/users/${userId}/`, {
+      .get(`${apiURL}/api/users/${userId}/`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       })
       .then((response) => {

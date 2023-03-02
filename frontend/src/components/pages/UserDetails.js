@@ -19,7 +19,7 @@ function UserDetails() {
 
   useEffect(() => {
     axios
-      .get(`${apiURL}/users/${id}/`, {
+      .get(`${apiURL}/api/users/${id}/`, {
         headers: { "x-access-token": localStorage.getItem("token") },
         params: { pages: page, albumsPerPage: albumsPerPage },
       })
