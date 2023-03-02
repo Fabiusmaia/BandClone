@@ -36,6 +36,5 @@ A camada View (visão) é responsável pela interação com o usuário. Nesta ca
 
 # Futuras implementações
 
-Transações online para compra e venda de álbums.
 
 >>>>>>> cb2961b38f2d8198d792f3965e88f6297d75de5d
