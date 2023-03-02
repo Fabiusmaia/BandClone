@@ -7,12 +7,11 @@ import { Context } from "../../Context/AuthContext";
 import { useContext } from "react";
 //
 function AlbumDetails() {
-  const { apiURL } = useContext(Context);
   const { id, name } = useParams();
   const [album, setAlbum] = useState({});
   useEffect(() => {
     axios
-      .get(`${apiURL}/api/albums/${id}`, {
+      .get(`https://localhost:3001/api/albums/${id}`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       })
       .then((response) => {

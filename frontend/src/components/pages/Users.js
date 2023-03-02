@@ -6,11 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const [apiURL] = useContext(Context);
 
   useEffect(() => {
     axios
-      .get(`${apiURL}`)
+      .get(`https://localhost:3001/api/users/`)
       .then(function (response) {
         setUsers(response.data);
       })

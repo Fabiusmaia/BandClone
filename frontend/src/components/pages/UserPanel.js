@@ -35,7 +35,7 @@ function UserPanel() {
 
   useEffect(() => {
     axios
-      .get(`${apiURL}/api/users/${userId}/`, {
+      .get(`https://localhost:3001/api/users/${userId}/`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       })
       .then((response) => {

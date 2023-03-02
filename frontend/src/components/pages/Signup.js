@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context/AuthContext";
 function Signup() {
-  const { apiURL } = useContext(Context);
   //
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,7 +13,7 @@ function Signup() {
     } else {
       console.log(email, password, userName);
       axios
-        .post(`${apiURL}/api/users/`, {
+        .post("https://localhost:3001/api/users/", {
           email: email,
           password: password,
           name: userName,
