@@ -35,7 +35,7 @@ function UserPanel() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/users/${userId}`, {
+      .get(`${apiURL}/users/${userId}/`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       })
       .then((response) => {
@@ -120,7 +120,7 @@ function UserPanel() {
     if (isMounted.current) {
       axios
         .post(
-          "http://localhost:3001/api/albums/",
+          `${apiURL}/api/albums/`,
           {
             name: albumName,
             cover: cover,

@@ -16,7 +16,7 @@ function UserDetails() {
   const [albums, setAlbums] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/users/${id}`, {
+      .get(`${apiURL}/users/${id}/`, {
         headers: { "x-access-token": localStorage.getItem("token") },
         params: { pages: page, albumsPerPage: albumsPerPage },
       })

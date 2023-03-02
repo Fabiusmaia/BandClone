@@ -12,7 +12,7 @@ function AlbumDetails() {
   const [userData, setUserData] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/albums/${id}`, {
+      .get(`${apiURL}/api/albums/${id}`, {
         headers: { "x-access-token": localStorage.getItem("token") },
       })
       .then((response) => {

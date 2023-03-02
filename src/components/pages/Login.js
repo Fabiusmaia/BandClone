@@ -7,7 +7,7 @@ import { Context } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { handleLogout } = useContext(Context);
+  const { handleLogout, apiURL } = useContext(Context);
   useEffect(() => {
     handleLogout();
   }, []);
@@ -25,7 +25,7 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/api/users/login/", {
+      .post(`${apiURL}/users/login/`, {
         email: email,
         password: password,
       })
