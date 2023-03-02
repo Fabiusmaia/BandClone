@@ -14,6 +14,8 @@ Projeto desenvolvido com React, Node, Express e MongoDB
 
 
 É possível enviar álbums para o banco de dados e reproduzí-los com um tocador de áudio embutido
+
+
 ![Captura de tela 2023-02-06 172217](https://user-images.githubusercontent.com/108621943/217295842-b2b270c5-95a3-4807-a089-5ab5c466c238.png)
 ![Captura de tela 2023-02-06 175521](https://user-images.githubusercontent.com/108621943/217295863-4ff628ff-f23e-41e6-8a09-1faa9969b712.png)
 
