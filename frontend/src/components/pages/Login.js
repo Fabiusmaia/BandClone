@@ -25,7 +25,7 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post(`${apiURL}/users/login/`, {
+      .post(`${apiURL}/api/users/login/`, {
         email: email,
         password: password,
       })
