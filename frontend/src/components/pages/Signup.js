@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "../styling/form.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Context } from "../../Context/AuthContext";
 function Signup() {
+  const { apiURL } = useContext(Context);
   function handleSubmit(e) {
     e.preventDefault();
     if (passwordConfirm !== password) {
@@ -11,7 +13,7 @@ function Signup() {
     } else {
       console.log(email, password, userName);
       axios
-        .post("http://localhost:3001/api/users/", {
+        .post(`${apiURL}/api/users/`, {
           email: email,
           password: password,
           name: userName,

@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { AuthProvider } from "../../Context/AuthContext";
+import { Context } from "../../Context/AuthContext";
 import { useContext } from "react";
 
 function AlbumDetails() {
+  const { apiURL } = useContext(Context);
   const { id, name } = useParams();
   const [album, setAlbum] = useState({});
-  const [userData, setUserData] = useState({});
   useEffect(() => {
     axios
       .get(`${apiURL}/api/albums/${id}`, {

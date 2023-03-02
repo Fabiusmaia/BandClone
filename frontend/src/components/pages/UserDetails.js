@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../styling/userDetails.module.css";
 import { useNavigate } from "react-router-dom";
 import plusIcon from "../styling/32339.png";
 import { Link } from "react-router-dom";
+import { Context } from "../../Context/AuthContext";
 
 function UserDetails() {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ function UserDetails() {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [albums, setAlbums] = useState([]);
+  const { apiURL } = useContext(Context);
   useEffect(() => {
     axios
       .get(`${apiURL}/users/${id}/`, {
