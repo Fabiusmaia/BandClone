@@ -6,7 +6,7 @@
 
 Bandclone é um projeto pessoal que foi inspirado originalmente no site Bandcamp, uma rede social voltada ao compartilhamento e comércio de música online.
 
-# Deploy do Projeto: https://orca-app-2-fvt24.ondigitalocean.app/
+#### Deploy do Projeto: https://orca-app-2-fvt24.ondigitalocean.app/
 
 Projeto desenvolvido com React, Node, Express e MongoDB   
 # Funções e recursos
