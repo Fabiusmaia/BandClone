@@ -18,14 +18,10 @@ function Login() {
   const [password, setPassword] = useState();
   const [message, setMessage] = useState("");
 
-  const instance = axios.create({
-    baseURL: "https://localhost:3001/api/users/",
-  });
-
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post(`${apiURL}/users/login/`, {
+      .post(`${apiURL}/api/users/login/`, {
         email: email,
         password: password,
       })
