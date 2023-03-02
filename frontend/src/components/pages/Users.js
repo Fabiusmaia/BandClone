@@ -5,12 +5,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Users() {
-  const navigate = useNavigate;
   const [users, setUsers] = useState([]);
+  const { apiURL } = useContext(Context);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/users/")
+      .get(`${apiURL}`)
       .then(function (response) {
         setUsers(response.data);
       })

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Context } from "../../Context/AuthContext";
 import { useContext } from "react";
-
+//
 function AlbumDetails() {
   const { apiURL } = useContext(Context);
   const { id, name } = useParams();

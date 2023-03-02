@@ -16,6 +16,7 @@ function UserDetails() {
   const [data, setData] = useState({});
   const [albums, setAlbums] = useState([]);
   const { apiURL } = useContext(Context);
+
   useEffect(() => {
     axios
       .get(`${apiURL}/users/${id}/`, {

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../Context/AuthContext";
 function Signup() {
   const { apiURL } = useContext(Context);
+  //
   function handleSubmit(e) {
     e.preventDefault();
     if (passwordConfirm !== password) {
